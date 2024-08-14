@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Envanter Takip WebApp</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <link rel="shortcut icon" href="https://onurr50.wordpress.com/wp-content/uploads/2024/08/fav.webp" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#main">
+                    <p><img src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/fav.webp" alt="" class="img brand-logo"> Envanter Takip
+                    </p>
+                </a>
+            </div>
+
+            <ul class="nav navbar-nav hide-on-small">
+                <li><a data-toggle="#tab" href="#hakkimizda">Hakkımızda <span
+                            class="glyphicon glyphicon-info-sign"></span></a></li>
+                <li><a data-toggle="#tab" href="#misyonumuz">Misyonumuz <span
+                            class="glyphicon glyphicon-thumbs-up"></span></a></li>
+                <li><a data-toggle="#tab" href="#vizyonumuz">Vizyonumuz <span
+                            class="glyphicon glyphicon-eye-open"></span></a></li>
+                <li><a data-toggle="#tab" href="#iletisim">İletişim <span
+                            class="glyphicon glyphicon-envelope"></span></a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right hide-on-small">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <i><input type="text" class="form-control form-search" placeholder="Ara..." id="seachInput"></i>
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="sidenav hide-on-small">
+        <div class="container">
+            <div class="btn-group-vertical">
+                <a class="btn btn-info left-buttons disabled" href="index.html" target="_parent">Ana Sayfa</a>
+                <a class="btn btn-info left-buttons" href="login.html" target="_parent">Giriş / Kayıt</a>
+                <a class="btn btn-info left-buttons" href="stock.html" target="_parent">Envanter</a>
+                <a class="btn btn-info left-buttons" href="customers.html" target="_parent">Müşteriler</a>
+                <a class="btn btn-info left-buttons" href="sales.html" target="_parent">Satış</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+
+        <div class="container text-center">
+            <div class="btn-group">
+                <a class="btn btn-info left-buttons disabled btn-group-horizontal" href="index.html"
+                    target="_parent">Ana Sayfa</a>
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="login.html" target="_parent">Giriş /
+                    Kayıt</a>
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="stock.html"
+                    target="_parent">Envanter</a>
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="customers.html"
+                    target="_parent">Müşteriler</a>
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="sales.html" target="_parent">Satış</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="jumbotron text-center">
+                <div class="container">
+                    <h1>Envanter Takip WebApp</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed efficitur velit.</p>
+                    <p>
+                        <a class="btn btn-primary btn-lg">Learn more</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container text-center" id="hakkimizda">
+            <h1 class="header1">Hakkımızda</h1>
+            <p class="paragraph1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed efficitur velit. Etiam
+                nec massa at nisl gravida maximus. Morbi ante neque, euismod a orci aliquam, dignissim convallis lorem.
+                Morbi finibus non nunc vitae malesuada. Aliquam erat volutpat. Curabitur vehicula lorem ut felis gravida
+                ultricies. Donec imperdiet diam ut ligula tempus, vel feugiat est lobortis. Vivamus in dictum lacus.
+                Fusce aliquet dolor sit amet tortor ornare fringilla. Cras dictum metus nulla, ac hendrerit ex cursus
+                eu. In interdum et augue a posuere. Suspendisse erat neque, imperdiet maximus vestibulum quis, suscipit
+                ut ex.</p>
+
+            <div class="row" style="padding-top: 30px;">
+                <div class="col-md-4">
+                    <a href="#person1" data-toggle="collapse">
+                        <img class="img-circle person" src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/img_avatar1.png" alt="">
+                    </a>
+                    <div id="person1" class="collapse">
+                        <p><strong>Hacı Onur Söğüt</strong></p>
+                        <p>Bilgisayar Mühendisi</p>
+                        <p>Meditek Arge</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <a href="#person2" data-toggle="collapse">
+                        <img class="img-circle person" src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/img_avatar2.png" alt="">
+                    </a>
+                    <div id="person2" class="collapse">
+                        <p><strong>Lorem Ipsum</strong></p>
+                        <p>Consectetur Adipiscing</p>
+                        <p>Meditek Arge</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <a href="#person3" data-toggle="collapse">
+                        <img class="img-circle person" src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/img_avatar3.png" alt="">
+                    </a>
+                    <div id="person3" class="collapse">
+                        <p><strong>Dolor Sit Amet</strong></p>
+                        <p>Efficitur Velit</p>
+                        <p>Meditek Arge</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center" id="misyonumuz">
+            <h1 class="header1">Misyonumuz</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="mission-vision" src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/mission-goals-4252954-3526675.webp" alt="">
+                </div>
+                <div class="col-md-8">
+                    <p class="paragraph1">Mauris fringilla auctor magna, ac bibendum magna congue vel. Quisque
+                        consectetur quis felis vitae molestie. Suspendisse potenti. Integer cursus vulputate ante eu
+                        sollicitudin. Pellentesque et pharetra eros. In molestie velit id lacus lacinia convallis. Nulla
+                        imperdiet ipsum turpis, et volutpat enim pharetra quis. Aenean a neque ut purus consequat
+                        semper. Cras auctor ac metus quis finibus. Vestibulum ante ipsum primis in faucibus orci luctus
+                        et ultrices posuere cubilia curae; Suspendisse euismod posuere congue. Phasellus neque augue,
+                        molestie eu aliquam quis, rutrum ut neque. Quisque placerat augue risus, ut dapibus nisi
+                        dignissim quis.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center" id="vizyonumuz">
+            <h1 class="header1">Vizyonumuz</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="paragraph1">Mauris fringilla auctor magna, ac bibendum magna congue vel. Quisque
+                        consectetur quis felis vitae molestie. Suspendisse potenti. Integer cursus vulputate ante eu
+                        sollicitudin. Pellentesque et pharetra eros. In molestie velit id lacus lacinia convallis. Nulla
+                        imperdiet ipsum turpis, et volutpat enim pharetra quis. Aenean a neque ut purus consequat
+                        semper. Cras auctor ac metus quis finibus. Vestibulum ante ipsum primis in faucibus orci luctus
+                        et ultrices posuere cubilia curae; Suspendisse euismod posuere congue. Phasellus neque augue,
+                        molestie eu aliquam quis, rutrum ut neque. Quisque placerat augue risus, ut dapibus nisi
+                        dignissim quis.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img class="mission-vision" src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/3611155.webp" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container" id="iletisim">
+            <h1 class="header1 text-center">İletişim</h1>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p style="margin-top: 10px;">Bizimle iletişime geçin ve size 24 saat içerisinde dönüş yapalım.</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> Kayseri, Türkiye</p>
+                    <p><span class="glyphicon glyphicon-phone"></span> +90 444 0 444</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+                </div>
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input style="margin-top: 10px;" class="form-control" id="name" name="name"
+                                placeholder="İsim" type="text" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input style="margin-top: 10px;" class="form-control" id="email" name="email"
+                                placeholder="Email" type="email" required>
+                        </div>
+                    </div>
+                    <textarea style="margin-top: 10px;" class="form-control" id="comments" name="comments"
+                        placeholder="Mesajınız..." rows="4"></textarea><br>
+                    <button class="btn btn-default pull-right button-form" type="submit">Send</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container text-center">
+            <footer class="">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <a href=""><img class="img social-img"
+                                src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/web-icon-logo-a6b586d114-seeklogo.com_.png" alt="Web Logo"></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href=""><img class="img social-img"
+                                src="https://cdn.prod.website-files.com/5d66bdc65e51a0d114d15891/64cebdd90aef8ef8c749e848_X-EverythingApp-Logo-Twitter.jpg" alt="Twitter Logo"></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href=""><img class="img social-img" src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/instagram_logo_2016.svg_.webp"
+                                alt="Instagram Logo"></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href=""><img class="img social-img" src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/facebook-6338507_1280.webp"
+                                alt="Facebook Logo"></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+
+    </div> <!--Div ID Main / Silme-->
+</body>
+
+</html>
