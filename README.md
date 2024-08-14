@@ -28,9 +28,10 @@ You can try the Stock Management Web App by visiting the link below:
 ## How to Use
 
 1. **Add Products**: Start by adding products to your inventory through the "Add Product" form.
-2. **Record Sales**: Use the sales entry form to record transactions and automatically update stock levels.
-3. **Monitor Inventory**: View the updated inventory list to keep track of product availability.
-4. **Generate Reports**: Access the reports section to visualize sales data and inventory trends.
+2. **Add Customers**: Add customers to your customer tab through the "Add Customer" form.
+3. **Record Sales**: Use the sales entry form to record transactions and automatically update stock levels.
+4. **Monitor Inventory**: View the updated inventory list to keep track of product availability.
+5. **Generate Reports**: Access the reports section to visualize sales data and inventory trends.
 
 ## Contributing
 
