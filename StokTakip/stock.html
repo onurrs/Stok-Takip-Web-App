@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Envanter</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.dataTables.css" />
+
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.js"></script>
+    <script src="custom_datatable_tr_lang.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/themes/default.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs/build/alertify.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="stock.js"></script>
+    <link rel="shortcut icon" href="https://onurr50.wordpress.com/wp-content/uploads/2024/08/fav.webp" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#main">
+                    <p><img src="https://onurr50.wordpress.com/wp-content/uploads/2024/08/fav.webp" alt="" class="img brand-logo"> Envanter Takip
+                    </p>
+                </a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right hide-on-small">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <i><input type="text" class="form-control" placeholder="Ara..." id="seachInput"></i>
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="sidenav hide-on-small">
+        <div class="container">
+            <div class="btn-group-vertical">
+                <a class="btn btn-info left-buttons" href="index.html" target="_parent">Ana Sayfa</a>
+                <a class="btn btn-info left-buttons" href="login.html" target="_parent">Giriş / Kayıt</a>
+                <a class="btn btn-info left-buttons disabled" href="stock.html" target="_parent">Envanter</a>
+                <a class="btn btn-info left-buttons" href="customers.html" target="_parent">Müşteriler</a>
+                <a class="btn btn-info left-buttons" href="sales.html" target="_parent">Satış</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="container text-center">
+            <div class="btn-group">
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="index.html" target="_parent">Ana
+                    Sayfa</a>
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="login.html" target="_parent">Giriş /
+                    Kayıt</a>
+                <a class="btn btn-info left-buttons disabled btn-group-horizontal" href="stock.html"
+                    target="_parent">Envanter</a>
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="customers.html"
+                    target="_parent">Müşteriler</a>
+                <a class="btn btn-info left-buttons btn-group-horizontal" href="sales.html" target="_parent">Satış</a>
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <div class="row" style="margin-bottom: 30px;">
+                <h1>Stok Değeri</h1>
+                <div class="col-sm-4 stock-values">
+                    <h2 id="estimated-sell"></h2>
+                    <h3>Tahmini Satış Değeri</h3>
+                </div>
+                <div class="col-sm-4 stock-values">
+                    <h2 id="estimated-buy"></h2>
+                    <h3>Tahmini Alış Değeri</h3>
+                </div>
+                <div class="col-sm-4 stock-values">
+                    <h2 id="estimated-profit"></h2>
+                    <h3>Tahmini Kazanç Değeri</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="jumbotron">
+
+                <h1 class="text-center">Envanter</h1>
+                <br>
+                <br>
+                <table id="stockTable" class="display row-border hover stripe">
+                </table>
+
+                <button type="button" data-toggle="modal" data-target="#addProductModal" class="btn btn-info">Yeni Ürün
+                    Ekle</button>
+
+
+            </div> <!--Jumbotron Sonu-->
+        </div> <!--Container Sonu-->
+    </div> <!--Main Sonu-->
+
+
+    <!-- Edit Modal HTML -->
+<div class="modal fade" id="productActionModal" tabindex="-1" role="dialog" aria-labelledby="productActionModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productActionModalLabel">Ürün Düzenle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editProductForm">
+                    <input type="hidden" id="editProductId">
+                    <div class="form-group">
+                        <label for="editProductName">İsim</label>
+                        <input type="text" class="form-control" id="editProductName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductBuyingPrice">Alış Fiyatı</label>
+                        <input type="number" class="form-control" id="editProductBuyingPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductQuantity">Stok Adet</label>
+                        <input type="number" class="form-control" id="editProductQuantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductPrice">Fiyat</label>
+                        <input type="number" class="form-control" id="editProductPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductImage">Yeni Resim</label>
+                        <input type="file" class="form-control-file" id="editProductImage" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="editProductImageUrl">Veya Yeni Resim URL</label>
+                        <input type="url" class="form-control" id="editProductImageUrl">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-danger" id="deleteProductButton">Sil</button>
+                <button type="button" class="btn btn-primary" id="updateProductButton">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!--ADD PRODUCT MODAL-->
+<div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">Yeni Ürün Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addProductForm">
+                    <div class="form-group">
+                        <label for="productName">İsim</label>
+                        <input type="text" class="form-control" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productBuyingPrice">Alış Fiyatı</label>
+                        <input type="number" class="form-control" id="productBuyingPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productQuantity">Stok Adet</label>
+                        <input type="number" class="form-control" id="productQuantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Fiyat</label>
+                        <input type="number" class="form-control" id="productPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Resim</label>
+                        <input type="file" class="form-control-file" id="productImage" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImageUrl">Veya Resim URL</label>
+                        <input type="url" class="form-control" id="productImageUrl">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary" id="saveProductButton">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade text-center" id="image-resize-up">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 id="imageResizeProductName"></h1>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="" id="imageResizeProductImage" class="imageResizeProductImage">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+
+</html>
